@@ -1,0 +1,20 @@
+define({
+    new_list: 'Create a new list',
+    new_task: 'Create a new task',
+    list_not_found: 'The list you requested could not be found.',
+    task_not_found: 'The task you requested could not be found.',
+    add_task_title: 'Add a new task',
+    add_task_ok: 'Add task',
+    add_task_cancel: 'Cancel',
+    add_list_title: 'Create a new list',
+    add_list_ok: 'Create list',
+    add_list_cancel: 'Cancel',
+    delete_task_title: 'Delete task',
+    delete_task_body: 'Are you sure you want to delete this task?',
+    delete_task_ok: 'Delete it',
+    delete_task_cancel: 'Cancel',
+    delete_list_title: 'Delete task list',
+    delete_list_body: 'Are you sure you want to delete this task list?',
+    delete_list_ok: 'Delete it',
+    delete_list_cancel: 'Cancel'
+});

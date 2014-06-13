@@ -1,0 +1,21 @@
+<div class="modal-dialog<% if (size) { %> modal-<%= size %><% } %>">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close modal-cancel" aria-hidden="true">&times;</button>
+            <% if (obj.title) { %>
+            <h4 class="modal-title"><%= title %></h4>
+            <% } %>
+        </div>
+        <div class="modal-body"></div>
+        <% if (obj.text_ok || obj.text_cancel) { %> 
+        <div class="modal-footer">
+            <% if (obj.text_cancel) { %>
+            <button type="button" class="btn btn-default modal-cancel"><%= text_cancel %></button>
+            <% } %>
+            <% if (obj.text_ok) { %>
+            <button type="button" class="btn btn-primary modal-ok"><%= text_ok %></button>
+            <% } %>
+        </div>
+        <% } %>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

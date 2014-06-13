@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>e1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- @exclude -->
+        <link rel="stylesheet/less" type="text/css" href="./styles/main.less">
+        <!-- @endExclude -->
+        <!-- @ifdef TARGET !>
+        <link rel="stylesheet" type="text/css" href="./styles/main.css">
+        <!-- @endif -->
+    </head>
+    <body>
+        <header id="toolbar"></header>
+        <div id="main" class="container"></div>
+        <footer id="footer"></footer>
+        <div id="overlay"></div>
+        <!-- @exclude -->
+        <script>
+            less = {
+                env: 'development',
+                logLevel: 1
+            };
+        </script>
+        <script src="./vendor/bower/less/dist/less-1.7.0.js"></script>
+        <script data-main="./scripts/main" src="./vendor/bower/requirejs/require.js"></script>
+        <!-- @endExclude -->
+        <!-- @ifdef TARGET !>
+        <script data-main="./scripts/main" src="./scripts/main.js"></script>
+        <!-- @endif -->
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<% console.log(obj) %>
+<div class="row">
+    <div class="col-xs-2 text-center">
+        <% if (state) { %>
+        <button class="set-incomplete btn btn-xs btn-primary" title="Mark as incomplete">
+            <span class="icon icon-checkmark"></span>
+        </button>
+        <% } else { %>
+        <button class="set-complete btn btn-xs btn-default" title="Mark as complete">
+            <span class="icon icon-dot text-muted"></span>
+        </button>
+        <% } %>
+    </div>
+    <div class="col-xs-8">
+        <p class="large"><strong><%= body %></strong></p>
+        <ul class="list-inline text-muted">
+            <li class="small">
+                <time><%= created.format("ddd, MMM Do") %></time>
+            </li>
+            <% if (due.isValid()) { %>
+            <li class="small">
+                <span class="icon icon-arrow-right7"></span>
+            </li>
+            <li class="small">
+                <time><%= due.format("ddd, MMM Do") %></time>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div class="col-xs-2">
+        <button type="button" class="delete close" aria-hidden="true" title="Delete">&times;</button>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<% console.log(obj) %>
+<h3>Overview</h3>
+<hr>
+<div class="row">
+    <div class="col-sm-4">
+        <h6 class="text-center">Completion</h6>
+        <h1 class="text-center"><%= tasks_complete_percent %>%</h1>
+    </div>
+    <div class="col-sm-4">
+        <h6 class="text-center">Tasks completed</h6>
+        <h1 class="text-success text-center"><%= tasks_complete %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h6 class="text-center">Tasks outstanding</h6>
+        <h1 class="text-danger text-center"><%= tasks_incomplete %></h1>
+    </div>
+</div>
+<hr>
+<% if (next_task) { %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <% if (next_task.due.isValid()) { %>
+        <p class="small text-warning text-right pull-right"><%= next_task.due.format("dddd, MMMM Do") %></p>
+        <% } %>
+        <h4 class="panel-title">Next task due</h4>
+    </div>
+    <div class="panel-body">
+        <%= next_task.body %>
+    </div>
+</div>
+<% } %>
+<% if (incomplete_list) { %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Most incomplete list</h4>
+    </div>
+    <div class="panel-body">
+        <%= incomplete_list.name %>
+    </div>
+</div>
+<% } %>
