@@ -39,7 +39,7 @@
             'alertify': '../vendor/bower/alertify.js/lib/alertify',
             'selectize': '../vendor/bower/selectize/dist/js/standalone/selectize',
             'pikaday': '../vendor/bower/pikaday/pikaday',
-            'nprogress': '../vendor/libs/nprogress-master/nprogress'
+            'nprogress': '../vendor/bower/nprogress/nprogress'
         },
         shim: {
             jquery: {exports: ['jQuery', '$']},

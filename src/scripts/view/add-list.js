@@ -20,7 +20,6 @@ define([
     
     function addListOnSubmit ()
     {
-        console.log(this.modal);
         if (this.modal) {
             this.modal.ok();
         }
