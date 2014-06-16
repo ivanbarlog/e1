@@ -1,7 +1,7 @@
 define([
     'backbone',
     'marionette',
-    'text!templates/add-list.html'
+    'tpl!templates/add-list'
 ], function(
     Backbone,
     Marionette,
@@ -34,7 +34,7 @@ define([
             'class': 'form add-list-form'
         },
         
-        template: _.template(template),
+        template: template,
         
         triggers: {
             'submit': 'submit',

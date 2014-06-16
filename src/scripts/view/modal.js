@@ -1,7 +1,7 @@
 define([
     'global',
     'marionette',
-    'text!templates/modal.html'
+    'tpl!templates/modal'
 ], function(
     global,
     Marionette,
@@ -73,7 +73,7 @@ define([
             role: 'dialog'
         },
         
-        template: _.template(template),
+        template: template,
         
         regions: {
             header: '.modal-header',

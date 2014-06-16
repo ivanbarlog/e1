@@ -1,13 +1,11 @@
 define([
     'global',
     'marionette',
-    'view/user/account',
-    'view/error'
+    'view/user/account'
 ], function(
     global,
     Marionette,
-    UserAccountView,
-    ErrorView
+    UserAccountView
 ) {
     'use strict';
     
@@ -24,12 +22,7 @@ define([
    
     function showError (route)
     {
-        var user = global.app.request('session:user');
-        
-        global.app.main.show(new ErrorView({
-            model: user,
-            route: route
-        }));
+        global.app.request('gui:error', '404 Not Found: ' + route);
     }
     
     

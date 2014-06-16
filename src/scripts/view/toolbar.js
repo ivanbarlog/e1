@@ -1,7 +1,7 @@
 define([
     'global',
     'marionette',
-    'text!templates/toolbar.html'
+    'tpl!templates/toolbar'
 ], function(
     global,
     Marionette,
@@ -25,7 +25,7 @@ define([
             'role': 'navigation'
         },
         
-        template: _.template(template),
+        template: template,
         
         ui: {
             logout: '[href="#logout"]'

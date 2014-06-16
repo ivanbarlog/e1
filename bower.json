@@ -13,6 +13,7 @@
     "requirejs": "2.1.x",
     "requirejs-text": "2.0.x",
     "requirejs-i18n": "2.0.x",
+    "requirejs-tpl-jfparadis": "#dffa4eb4479079e437afbb8d034a94fe28c07cf9",
     "bootstrap": "3.1.x",
     "moment": "2.6.x",
     "fastclick": "1.0.x",

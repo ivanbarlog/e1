@@ -13,6 +13,7 @@
         "body-parser": "~1.3.x",
         "cookie-parser": "~1.1.x",
         "express-session": "~1.2.x",
+        "compression": "~1.0.x",
         "passport": "~0.2.x",
         "passport-local": "~1.0.x",
         "moment": "~2.6.x"
@@ -24,9 +25,9 @@
         "nodemon": "~1.2.x",
         "load-grunt-tasks": "~0.4.x",
         "grunt-contrib-watch": "~0.6.x",
-        "grunt-contrib-clean": "~0.4.x",
+        "grunt-contrib-clean": "~0.5.x",
         "grunt-contrib-copy": "~0.5.x",
-        "grunt-preprocess": "~0.4.x",
+        "grunt-preprocess": "~4.0.x",
         "grunt-contrib-requirejs": "~0.4.x",
         "grunt-contrib-jshint": "~0.7.x",
         "grunt-contrib-sass": "~0.5.x",
@@ -41,12 +42,12 @@
     },
     "env": {
         "staging": {
-            "endpoint": "http:\/\/127.0.0.1:8892/",
-            "goog_api_key": "AIzaSyBV4xY7983bl9gyls22qTOub3LeKjKXva0"
+            "ENDPOINT": "http:\/\/127.0.0.1:8892/",
+            "GOOG_API_KEY": "AIzaSyBV4xY7983bl9gyls22qTOub3LeKjKXva0"
         },
         "production": {
-            "endpoint": "http:\/\/127.0.0.1:8892/",
-            "goog_api_key": "AIzaSyBV4xY7983bl9gyls22qTOub3LeKjKXva0"
+            "ENDPOINT": "http:\/\/127.0.0.1:8892/",
+            "GOOG_API_KEY": "AIzaSyBV4xY7983bl9gyls22qTOub3LeKjKXva0"
         }
     }
 }

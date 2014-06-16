@@ -1,6 +1,6 @@
 define([
     'marionette',
-    'text!templates/overview.html'
+    'tpl!templates/overview'
 ], function(
     Marionette,
     template
@@ -22,7 +22,7 @@ define([
             'class': 'error'
         },
         
-        template: _.template(template),
+        template: template,
         
         serializeData: overviewSerializeData,
         

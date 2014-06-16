@@ -17,17 +17,10 @@ define([
         global.app.main.show(new LoginFormView({model:user}));
     }
     
-   
-    function showError (route)
-    {
-        global.app.request('gui:error', "Route not found: '"+ route + "'");
-    }
-    
     
     return Marionette.Controller.extend({
         
-        showLogin: showLogin,
-        showError: showError
+        showLogin: showLogin
         
     });
 });

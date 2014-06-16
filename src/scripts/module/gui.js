@@ -2,14 +2,19 @@ define([
     'module/factory',
     'view/toolbar',
     'view/modal',
+    'view/error',
     'alertify',
     'nprogress',
     'fastclick',
-    'bootstrap'
+    'bootstrap.button',
+    'bootstrap.modal',
+    'bootstrap.tooltip',
+    'bootstrap.transition'
 ], function(
     moduleFactory,
     ToolbarView,
     ModalView,
+    ErrorView,
     Alertify,
     Nprogress,
     FastClick
@@ -120,6 +125,16 @@ define([
     }
     
     
+    function doError (message)
+    {
+        var view = new ErrorView({message:message});
+        
+        this.app.main.show(view);
+        
+        return view;
+    }
+    
+    
     return moduleFactory(
         'gui',
         onFrameModuleStart,
@@ -136,7 +151,8 @@ define([
             confirm: doConfirm,
             prompt: doPrompt,
             top: doTop,
-            modal: doModal
+            modal: doModal,
+            error: doError
         }
     );
 });

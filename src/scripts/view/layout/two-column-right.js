@@ -1,6 +1,6 @@
 define([
     'marionette',
-    'text!templates/layout/two-column-right.html'
+    'tpl!templates/layout/two-column-right'
 ], function(
     Marionette,
     template
@@ -15,7 +15,7 @@ define([
             'class': 'layout-two-column-right'
         },
         
-        template: _.template(template),
+        template: template,
         
         regions: {
             main: '.target-area-main',

@@ -2,7 +2,7 @@ define([
     'backbone',
     'marionette',
     'pikaday',
-    'text!templates/add-task.html'
+    'tpl!templates/add-task'
 ], function(
     Backbone,
     Marionette,
@@ -57,7 +57,7 @@ define([
             'class': 'form add-task-form'
         },
         
-        template: _.template(template),
+        template: template,
         
         ui: {
             due: '[name="due"]'

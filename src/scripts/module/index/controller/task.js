@@ -48,7 +48,7 @@ define([
             task, tasks, layout;
         
         if (!list) {
-            global.app.request('error', str.list_not_found);
+            return global.app.request('gui:error', str.list_not_found);
         }
         
         tasks = list.getTasks();
@@ -56,7 +56,7 @@ define([
         if (task_id) {
             task = tasks.get(task_id);
             if (!task) {
-                global.app.request('error', str.task_not_found);
+                return global.app.request('gui:error', str.task_not_found);
             }
         }
         

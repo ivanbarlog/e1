@@ -3,8 +3,8 @@ define([
     'marionette',
     'model/task-list',
     'view/add-list',
-    'text!templates/task-list-list.html',
-    'text!templates/task-list-list-item.html',
+    'tpl!templates/task-list-list',
+    'tpl!templates/task-list-list-item',
     'i18n!nls/task'
 ], function(
     global,
@@ -76,7 +76,7 @@ define([
         
         attributes: taskListAttributes,
         
-        template: _.template(template_item),
+        template: template_item,
         
         triggers: {
             'click a,span': 'click',
@@ -134,7 +134,7 @@ define([
             'class': 'task-list-list'
         },
         
-        template: _.template(template_list),
+        template: template_list,
         
         itemView: TaskListItemView,
         itemViewContainer: 'ul',

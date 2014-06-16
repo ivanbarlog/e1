@@ -1,6 +1,6 @@
 define([
     'marionette',
-    'text!templates/user/account.html'
+    'tpl!templates/user/account'
 ], function(
     Marionette,
     template
@@ -22,7 +22,7 @@ define([
             'class': 'form account-form'
         },
         
-        template: _.template(template),
+        template: template,
         
         triggers: {
             'submit': 'submit'

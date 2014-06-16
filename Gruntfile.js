@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                 trailing: true,
                 undef: true,
                 unused: true,
-                maxlen: 130,
+                maxlen: 140,
                 indent: 4,
                 
                 // Casual.
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         
         clean: {
             dist: ['dist/'],
-            temp: ['tmp/']
+            tmp: ['tmp/']
         },
         
         modernizr: {
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
                 { cwd: 'src', expand: true, src: '**/*', dest: 'tmp/' }
             ]},
             dist: { files: [
-                { src: 'tmp/favicon.ico', dest: 'dist/favicon.ico' },
+                { cwd: 'tmp/', expand: true, src: '*.{html,ico}', dest: 'dist/' },
                 { cwd: 'tmp/fonts/', expand: true, src: '*.{eot,svg,ttf,woff}', dest: 'dist/fonts/' },
                 { cwd: 'tmp/images/', expand: true, src: '**/*', dest: 'dist/images/' }
             ]}
@@ -111,12 +111,7 @@ module.exports = function(grunt) {
         
         preprocess: {
             options: {
-                context: {
-                    TARGET: target,
-                    TIMESTAMP: timestamp,
-                    ENDPOINT: '<%= pkg.env.' + target + '.endpoint %>',
-                    GOOG_API_KEY: '<%= pkg.env.' + target + '.goog_api_key %>'
-                }
+                context: {}
             },
             dist: {
                 options: {
@@ -139,7 +134,9 @@ module.exports = function(grunt) {
                     out: 'tmp/scripts/main.full.js',
                     preserveLicenseComments: false,
                     almond: true,
-                    optimize: 'none'
+                    optimize: 'none',
+                    inlineJSON: false,
+                    stubModules: ['tpl']
                 }
             }
         },
@@ -159,7 +156,7 @@ module.exports = function(grunt) {
                         'checkVars',
                         'suspiciousCode'
                     ],
-                    summary_detail_level: 3,
+                    summary_detail_level: 1,
                     output_wrapper: '"%output%"'
                 }
             },
@@ -206,6 +203,12 @@ module.exports = function(grunt) {
         }
     });
     
+    // Set target-dependent options.`
+    grunt.config.set('preprocess.options.context', grunt.config.get('pkg').env[target]);
+    grunt.config.set('preprocess.options.context.TARGET', target);
+    grunt.config.set('preprocess.options.context.TIMESTAMP', timestamp);
+    
+    
     // Define task runners.
     
     // grunt
@@ -232,13 +235,13 @@ module.exports = function(grunt) {
     grunt.registerTask('verify', [
         'jshint',
         'requirejs:dist',
-        'clean:temp'
+        'clean:tmp'
     ]);
     
     // grunt server
     //
     // Run the server side script which provides the API.
-    grunt.registerTask('server', [
+    grunt.registerTask('serve', [
         'jshint:server',
         'nodemon:server'
     ]);

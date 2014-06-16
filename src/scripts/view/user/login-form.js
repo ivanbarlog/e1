@@ -2,7 +2,7 @@ define([
     'global',
     'backbone',
     'marionette',
-    'text!templates/user/login-form.html',
+    'tpl!templates/user/login-form',
     'backbone.syphon'
 ], function(
     global,
@@ -38,7 +38,7 @@ define([
             'role': 'form'
         },
         
-        template: _.template(template),
+        template: template,
         
         ui: {
             submit: '[type="submit"]'

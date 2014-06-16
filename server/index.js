@@ -2,6 +2,7 @@ module.exports = (function (
     _,
     http,
     express,
+    expressCompression,
     expressCookieParser,
     expressBodyParser,
     expressSession,
@@ -275,6 +276,7 @@ module.exports = (function (
 
 
         // Bind express middleware.
+        app.use(expressCompression());
         app.use(expressCookieParser());
         app.use(expressBodyParser());
         app.use(expressSession({secret:'8891'}));
@@ -334,6 +336,7 @@ module.exports = (function (
     require('underscore'),
     require('http'),
     require('express'),
+    require('compression'),
     require('cookie-parser'),
     require('body-parser'),
     require('express-session'),

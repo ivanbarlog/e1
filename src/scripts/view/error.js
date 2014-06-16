@@ -1,6 +1,6 @@
 define([
     'marionette',
-    'text!templates/error.html'
+    'tpl!templates/error'
 ], function(
     Marionette,
     template
@@ -16,7 +16,11 @@ define([
             'class': 'error'
         },
         
-        template: _.template(template)
+        template: template,
+        
+        serializeData: function() {
+            return {message: this.options.message || ''};
+        }
         
     });
 });

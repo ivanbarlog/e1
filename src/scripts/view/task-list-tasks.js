@@ -3,8 +3,8 @@ define([
     'marionette',
     'model/task',
     'view/add-task',
-    'text!templates/task-list-tasks.html',
-    'text!templates/task-list-tasks-item.html',
+    'tpl!templates/task-list-tasks',
+    'tpl!templates/task-list-tasks-item',
     'i18n!nls/task'
 ], function(
     global,
@@ -76,7 +76,7 @@ define([
             'class': 'task-list-tasks-item list-group-item'
         },
         
-        template: _.template(template_item),
+        template: template_item,
         
         ui: {
             tooltip: '[title]',
@@ -147,7 +147,7 @@ define([
             'class': 'task-list-tasks'
         },
         
-        template: _.template(template_list),
+        template: template_list,
         
         itemView: ItemView,
         itemViewContainer: 'ul',

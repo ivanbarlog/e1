@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 # Vagrant executes this entire script as root, so no need to sudo.
+# Vagrant supports most popular provisioning tools, but a bash script is the
+# simplest, quickest and easiest to understand way.
+
 
 apt-get update
 
@@ -26,7 +29,9 @@ rm -rf /usr/bin/node
 ln -fs /usr/local/bin/node /usr/bin/node
 rm -rf /usr/bin/npm
 ln -fs /usr/local/bin/npm /usr/bin/npm
+npm cache clean -f
 
+# Install task runners and package managers.
 npm install -g grunt
 npm install -g grunt-cli
 npm install -g bower
@@ -34,6 +39,9 @@ npm install -g bower
 # Install ruby just so we can use CSS preprocessor tasks (sigh).
 apt-get install -y ruby
 gem install compass
+
+# Install java just so we can run the closure compiler
+apt-get install -y openjdk-7-jre
 
 # Install package dependencies.
 su - vagrant
