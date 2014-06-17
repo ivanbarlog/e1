@@ -84,6 +84,7 @@ A few things to bear in mind:
   * The application is structured to run fully in its completely uncompiled state, so you do not need to compile during development, or run any 'watcher' commands in the background to automatically recompile scripts or styles.
   * Targets can be specified for the build. Their paramaters are defined in `package.json` and invoked by setting the `target` parameter, e.g. `grunt --target=production`.
   * The `server` code is not particularly relevant or complete and is only there to power the example.
+  * If you see an npm error while provisioing the VM relating to 'graceful-fs' you probably don't need to worry about it.
   * More to come...
 
 ## To-do
